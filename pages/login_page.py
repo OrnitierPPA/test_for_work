@@ -9,6 +9,7 @@ class LoginPage(BasePage):
                'https://portal.sovcombank.ru/', "Предполагаемый результат не был найден"
         link = self.browser.find_element(*SearchPageLocators.LINK).get_attribute('href')
         self.open_in_new_window(link)
+        assert self.wait_element(*LogInPageLocators.BUTTON), "Страница не загрузилась"
 
     def login_in_account(self):
         assert self.is_element_present(*LogInPageLocators.LOGIN_LINE), "Строка логина не найдена"

@@ -39,6 +39,15 @@ class BasePage:
         except TimeoutException:
             return True
         return False
+    
+    def wait_element(self, how, what, timeout=4):
+        try:
+            WebDriverWait(self.browser, timeout).until(
+                EC.visibility_of_element_located((how, what))
+            )
+        except TimeoutException:
+            return False
+        return True
 
     def is_element_present(self, how, what):
         try:

@@ -12,7 +12,6 @@ def browser():
     browser.maximize_window()
     yield browser
     now = datetime.now()
-    time.sleep(5)
     browser.save_screenshot("%d_%d_%d_screen.png" % (now.hour, now.minute, now.second))
     print("\nquit browser..")
     browser.quit()

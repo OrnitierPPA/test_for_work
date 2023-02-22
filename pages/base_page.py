@@ -16,7 +16,7 @@ def random_pass_mail(num):
 
 
 def copy_link(link_file):
-    with open(link_file, "r", encoding="utf-8") as file:
+    with open(link_file, "r") as file:
         link = file.read()
         print(link)
     return link
